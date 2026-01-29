@@ -1,3 +1,11 @@
+# STM32CubeIDE
+.settings/
+.metadata/
+Debug/
+debug/
+Release/
+release/
+
 # Prerequisites
 *.d
 
