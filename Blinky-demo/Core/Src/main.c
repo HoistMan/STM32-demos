@@ -91,9 +91,9 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   // create string buffer for printing
-  uint8_t prnBuf[] = "Hello World!";
-  uint8_t prnBufLen = 12;
-  HAL_StatusTypeDef ret = 0;
+  const uint8_t prnBuf[] = "Hello World!\r\n";
+  const uint8_t prnBufLen = 14;
+  volatile HAL_StatusTypeDef ret = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -103,7 +103,6 @@ int main(void)
 	// Toggle GPIO 8 incessantly
 	HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_8);
 	ret = HAL_UART_Transmit(&huart2, (uint8_t*)prnBuf, prnBufLen, 10000);
-//  printf("Hello world!");
 	HAL_Delay(1000);
   }
     /* USER CODE END WHILE */
@@ -243,7 +242,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
 /* USER CODE END 4 */
 
 /**
